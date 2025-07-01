@@ -24,5 +24,22 @@ test("Deve verificar se um valor não está definido.", ()=>{
 
 test("Deve verificar se um valor não está indefinido.", ()=>{
     expect(undefined).toBe(undefined)
-    expect(undefined).not.toBeUndefined()
+    expect(undefined).toBeUndefined()
+})
+
+test("Deve verificar se um valor é falsy.", ()=>{
+    // null, undefined, "", NaN, 0, -0
+    expect(undefined).toBeFalsy()
+    expect(null).toBeFalsy()
+    expect("").toBeFalsy()
+    expect(NaN).toBeFalsy()
+    expect(0).toBeFalsy()
+    expect(-0).toBeFalsy()
+})
+
+test("Deve verificar se um valor é truthy.", ()=>{
+    // !falsy
+    expect(10).toBeTruthy()
+    expect(-3).toBeTruthy()
+    expect("ola").toBeTruthy()
 })
